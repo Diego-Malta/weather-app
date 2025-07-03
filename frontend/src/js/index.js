@@ -5,6 +5,13 @@ document.getElementById('searchBtn').addEventListener('click', () => {
         return;
     }
 
+    const loader = document.getElementById('loader');
+    const resultDiv = document.getElementById('result');
+
+    // Show loader and clear old results
+    loader.style.display = 'block';
+    resultDiv.innerHTML = '';
+
     fetch(`http://localhost:5000/weather/${city}`)
         .then(response => {
             if (!response.ok) {
@@ -15,6 +22,10 @@ document.getElementById('searchBtn').addEventListener('click', () => {
         .then(data => displayWeather(data))
         .catch(error => {
             document.getElementById('result').innerHTML = `<p style="color:red">${error.message}</p>`;
+        })
+        .finally(() => {
+            // Always hide loader
+            loader.style.display = 'none';
         });
 });
 
