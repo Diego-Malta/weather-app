@@ -1,0 +1,7 @@
+div.container {
+  max-width: fit-content;
+}
+
+p.feels-like-temp {
+  font-size: smaller;
+}

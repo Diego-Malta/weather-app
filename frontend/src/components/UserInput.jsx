@@ -1,8 +1,11 @@
-function UserInput(props) {
+function UserInput({ city, setCity, fetchWeather }) {
+
+  const handleInput = e => setCity(e.target.value);
+  
   return (
     <div className="user-input">
-      <input value={props.city} placeholder="Enter city" />
-      <button onClick={()=> console.log("Button clicked")}>Get Weather</button>
+      <input type="text" value={city} placeholder="Enter city" onChange={handleInput}/>
+      <button onClick={fetchWeather}>Get Weather</button>
     </div>
   )
 }

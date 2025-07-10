@@ -1,3 +1,12 @@
-h1 {
-  color: blue;
+.container {
+  text-align: center;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+button {
+  padding: 8px 16px;
 }
